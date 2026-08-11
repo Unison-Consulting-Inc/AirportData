@@ -87,9 +87,9 @@ through 2026 but un-aggregated files only through 2025.
 
 ## How the data is refreshed
 
-The producing pipeline is **`dot-download`** (local path `~/Projects/util/dot-download`; remote
-`github.com/garycl/dot-download`, which is **private**). Read `dot-download/RUNBOOK.md` before
-running anything by hand.
+The producing pipeline is **`dot-download`**
+(`github.com/Unison-Consulting-Inc/dot-download`, **private** — org membership
+required). Read `dot-download/RUNBOOK.md` before running anything by hand.
 
 **Automated path — GitHub Actions `bts-refresh.yml`**
 (`dot-download/.github/workflows/bts-refresh.yml`). The workflow checks out this repo with
@@ -177,21 +177,14 @@ History was intentionally not carried over. `git log` shows a single commit,
 snapshot: pre-2026-08-05 provenance lives in METHODOLOGY.md's changelog, not in git history.
 There is no earlier commit to diff against or revert to.
 
-### Publish target vs. this repo
+### This repo is both the write and the read target
 
-The GitHub Action targets `Unison-Consulting-Inc/AirportData` (`bts-refresh.yml:17`), but every
-piece of *runtime* code still fetches `garycl/AirportData`:
-
-- `dash/airport/src/lib/duckdb.ts:68` and `src/utils/api.ts:1` (the latter is hardcoded and
-  ignores the `VITE_DATA_URL` override)
-- `util/fuel-price/config.py:19-20`
-- `util/rental-car-cfc/config.py:19`, `src/publish.py:35-37`
-
-`garycl/AirportData` and `Unison-Consulting-Inc/AirportData` are two independent non-fork
-repos. Until the consumer base URLs are repointed here, this repo is the *write* target and
-`garycl/AirportData` is still the *read* target. Also note
-`util/rental-car-cfc/tests/test_imports.py:16` asserts the literal string `garycl/AirportData`
-and will fail the moment the URL is migrated.
+The `bts-refresh` GitHub Action (in `Unison-Consulting-Inc/dot-download`) pushes
+refreshed aggregates here on its monthly crons, and every runtime consumer fetches
+from this repo's raw URLs: `dash-airport` (`src/lib/duckdb.ts:68`, `src/utils/api.ts:1`
+— the latter is hardcoded and ignores the `VITE_DATA_URL` override),
+`fuel-price/config.py:19-20`, and `rental-car-cfc`. A push to `master` here is
+immediately live in the dashboard on its next page load.
 
 ### `Airport_CFC.parquet` publishing is manual and undocumented in code
 
@@ -207,28 +200,30 @@ Note also that the two runbooks contradict each other on how to handle this repo
 `rental-car-cfc/RUNBOOK.md:46` says **never** clone it (it is multi-gigabyte). Both are
 defensible for their own workflow; be aware of the clone cost before following the former.
 
-### Six files have no generator anywhere — preserve them
+### Five files have no generator anywhere — preserve them
 
-`NPIAS_Airports.parquet`, `ntad_airports.parquet`, `L_CITY_MARKET_ID.parquet`,
-`Report127_Compiled.parquet`, `air_to_truck.parquet`, and
-`Intermodal_Freight_Facilities_Air-to-Truck.csv` are not produced by any script in
-`~/Projects`. Nothing can rebuild them.
+`ntad_airports.parquet`, `L_CITY_MARKET_ID.parquet`, `Report127_Compiled.parquet`,
+`air_to_truck.parquet`, and `Intermodal_Freight_Facilities_Air-to-Truck.csv` are not
+produced by any script. Nothing can rebuild them; keep backups outside git.
 
-The first three are actively depended on — `NPIAS_Airports.parquet` alone is read by the
-dashboard, the fuel-price pipeline, the CFC pipeline, and the BTS pipeline itself. Losing it
-breaks four projects at once. Keep backups outside git.
+`NPIAS_Airports.parquet` **does** have a generator: `npias_build.py` in the
+`dot-download` repo (added 2026-08-10; `--check` mode verifies a fresh build against
+this published file; the FAA source workbook is committed beside it). It is read by
+the dashboard, the fuel-price pipeline, the CFC pipeline, and the BTS pipeline itself
+— if it is ever lost or corrupted, rebuild it with that script rather than restoring
+by hand.
 
 The last three (`Report127_Compiled.parquet`, `air_to_truck.parquet`, and the intermodal CSV)
 have **zero readers and zero writers** anywhere in `~/Projects` — they are orphaned. Do not
 delete them on that basis alone; an unrecoverable file with no known consumer is still
 unrecoverable, and the consumer may simply be outside this codebase.
 
-### The pipeline code is in a private personal repo
+### The pipeline code is private
 
-`dot-download`, `fuel-price`, and `rental-car-cfc` are all **private** repos under `garycl`,
-not under the org. Org membership alone does not grant access. METHODOLOGY.md's link to
-`github.com/garycl/dot-download` will 404 for a successor. Those repos need to be transferred
-or forked into the org before anyone else can refresh this data.
+`dot-download`, `fuel-price`, and `rental-car-cfc` are **private** repos under
+`Unison-Consulting-Inc` — refreshing this data requires org membership. If a link to
+one of them 404s, your account is not in the org (a 404 on a private repo means "no
+access", not "no repo").
 
 ### Two schedule gaps worth knowing
 
