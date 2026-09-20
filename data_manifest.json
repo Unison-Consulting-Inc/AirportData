@@ -2466,5 +2466,29 @@
     "downloaded_at": "2026-09-10T12:13:48",
     "rows": 13072897,
     "file": "od40/month/od40_2026_03.parquet"
+  },
+  {
+    "dataset": "form41_p12",
+    "year": 2026,
+    "quarter": 2,
+    "downloaded_at": "2026-09-20T12:02:06",
+    "rows": 96,
+    "file": "form41/p12/form41_p12_2026_Q2.parquet"
+  },
+  {
+    "dataset": "form41_p52",
+    "year": 2026,
+    "quarter": 2,
+    "downloaded_at": "2026-09-20T12:02:17",
+    "rows": 630,
+    "file": "form41/p52/form41_p52_2026_Q2.parquet"
+  },
+  {
+    "dataset": "form41_p6",
+    "year": 2026,
+    "quarter": 2,
+    "downloaded_at": "2026-09-20T12:02:27",
+    "rows": 1960,
+    "file": "form41/p6/form41_p6_2026_Q2.parquet"
   }
 ]
