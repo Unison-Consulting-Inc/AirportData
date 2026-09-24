@@ -2518,5 +2518,101 @@
     "downloaded_at": "2026-09-24T13:44:54",
     "rows": 284287,
     "file": "t100_seg/t100_seg_2026.parquet"
+  },
+  {
+    "dataset": "od40",
+    "year": 2025,
+    "month": 7,
+    "downloaded_at": "2026-09-24T14:00:02",
+    "rows": 14653099,
+    "file": "od40/month/od40_2025_07.parquet"
+  },
+  {
+    "dataset": "od40",
+    "year": 2025,
+    "month": 8,
+    "downloaded_at": "2026-09-24T14:00:10",
+    "rows": 13703239,
+    "file": "od40/month/od40_2025_08.parquet"
+  },
+  {
+    "dataset": "od40",
+    "year": 2025,
+    "month": 9,
+    "downloaded_at": "2026-09-24T14:00:18",
+    "rows": 12022697,
+    "file": "od40/month/od40_2025_09.parquet"
+  },
+  {
+    "dataset": "od40",
+    "year": 2025,
+    "month": 10,
+    "downloaded_at": "2026-09-24T14:00:26",
+    "rows": 13825512,
+    "file": "od40/month/od40_2025_10.parquet"
+  },
+  {
+    "dataset": "od40",
+    "year": 2025,
+    "month": 11,
+    "downloaded_at": "2026-09-24T14:00:40",
+    "rows": 12203311,
+    "file": "od40/month/od40_2025_11.parquet"
+  },
+  {
+    "dataset": "od40",
+    "year": 2025,
+    "month": 12,
+    "downloaded_at": "2026-09-24T14:00:48",
+    "rows": 13522888,
+    "file": "od40/month/od40_2025_12.parquet"
+  },
+  {
+    "dataset": "od40",
+    "year": 2026,
+    "month": 1,
+    "downloaded_at": "2026-09-24T14:00:54",
+    "rows": 10402745,
+    "file": "od40/month/od40_2026_01.parquet"
+  },
+  {
+    "dataset": "od40",
+    "year": 2026,
+    "month": 2,
+    "downloaded_at": "2026-09-24T14:01:01",
+    "rows": 10990728,
+    "file": "od40/month/od40_2026_02.parquet"
+  },
+  {
+    "dataset": "od40",
+    "year": 2026,
+    "month": 3,
+    "downloaded_at": "2026-09-24T14:01:09",
+    "rows": 13543729,
+    "file": "od40/month/od40_2026_03.parquet"
+  },
+  {
+    "dataset": "od40",
+    "year": 2026,
+    "month": 4,
+    "downloaded_at": "2026-09-24T14:01:18",
+    "rows": 12835558,
+    "file": "od40/month/od40_2026_04.parquet"
+  },
+  {
+    "dataset": "od40",
+    "year": 2026,
+    "month": 5,
+    "downloaded_at": "2026-09-24T14:01:27",
+    "rows": 13517709,
+    "file": "od40/month/od40_2026_05.parquet"
+  },
+  {
+    "dataset": "od40",
+    "year": 2026,
+    "month": 6,
+    "downloaded_at": "2026-09-24T14:01:35",
+    "rows": 13822006,
+    "file": "od40/month/od40_2026_06.parquet"
   }
 ]
