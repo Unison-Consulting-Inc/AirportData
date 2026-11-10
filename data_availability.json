@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-15T16:42:03",
+  "generated_at": "2026-11-10T19:18:51",
   "overall": {
     "min_period": "1990Q1",
     "max_period": "2026Q3",
@@ -11,11 +11,11 @@
   "datasets": {
     "db1b_market": {
       "min_period": "1993Q1",
-      "max_period": "2026Q2",
+      "max_period": "2026Q3",
       "min_year": 1993,
       "max_year": 2026,
       "min_quarter": 1,
-      "max_quarter": 2,
+      "max_quarter": 3,
       "quarters": [
         "1993Q1",
         "1993Q2",
@@ -150,7 +150,8 @@
         "2025Q3",
         "2025Q4",
         "2026Q1",
-        "2026Q2"
+        "2026Q2",
+        "2026Q3"
       ],
       "notes": [
         "Q3 2025+ sourced from OD40 (DB1C monthly) rescaled to 10%-sample equivalent.",
@@ -161,11 +162,11 @@
     },
     "db1b_ticket": {
       "min_period": "1993Q1",
-      "max_period": "2026Q2",
+      "max_period": "2026Q3",
       "min_year": 1993,
       "max_year": 2026,
       "min_quarter": 1,
-      "max_quarter": 2,
+      "max_quarter": 3,
       "quarters": [
         "1993Q1",
         "1993Q2",
@@ -300,7 +301,8 @@
         "2025Q3",
         "2025Q4",
         "2026Q1",
-        "2026Q2"
+        "2026Q2",
+        "2026Q3"
       ],
       "notes": [
         "Q3 2025+ sourced from OD40 (DB1C monthly) rescaled to 10%-sample equivalent.",
@@ -629,16 +631,17 @@
     },
     "od40_market": {
       "min_period": "2025Q3",
-      "max_period": "2026Q2",
+      "max_period": "2026Q3",
       "min_year": 2025,
       "max_year": 2026,
       "min_quarter": 3,
-      "max_quarter": 2,
+      "max_quarter": 3,
       "quarters": [
         "2025Q3",
         "2025Q4",
         "2026Q1",
-        "2026Q2"
+        "2026Q2",
+        "2026Q3"
       ],
       "months": [
         "2025-07",
@@ -652,7 +655,8 @@
         "2026-03",
         "2026-04",
         "2026-05",
-        "2026-06"
+        "2026-06",
+        "2026-07"
       ],
       "notes": [
         "Native 40% sample; divide PAX by 0.40 to weight to 100%.",

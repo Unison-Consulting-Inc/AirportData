@@ -2766,5 +2766,21 @@
     "downloaded_at": "2026-10-15T16:41:50",
     "rows": 332658,
     "file": "t100_seg/t100_seg_2026.parquet"
+  },
+  {
+    "dataset": "od40",
+    "year": 2026,
+    "month": 2,
+    "downloaded_at": "2026-11-10T19:17:39",
+    "rows": 10990728,
+    "file": "od40/month/od40_2026_02.parquet"
+  },
+  {
+    "dataset": "od40",
+    "year": 2026,
+    "month": 7,
+    "downloaded_at": "2026-11-10T19:17:44",
+    "rows": 14292653,
+    "file": "od40/month/od40_2026_07.parquet"
   }
 ]
