@@ -2782,5 +2782,33 @@
     "downloaded_at": "2026-11-10T19:17:44",
     "rows": 14292653,
     "file": "od40/month/od40_2026_07.parquet"
+  },
+  {
+    "dataset": "t100_market",
+    "year": 2025,
+    "downloaded_at": "2026-11-15T18:39:45",
+    "rows": 327441,
+    "file": "t100_mkt/t100_mkt_2025.parquet"
+  },
+  {
+    "dataset": "t100_market",
+    "year": 2026,
+    "downloaded_at": "2026-11-15T18:40:21",
+    "rows": 220713,
+    "file": "t100_mkt/t100_mkt_2026.parquet"
+  },
+  {
+    "dataset": "t100_segment",
+    "year": 2025,
+    "downloaded_at": "2026-11-15T18:41:54",
+    "rows": 571262,
+    "file": "t100_seg/t100_seg_2025.parquet"
+  },
+  {
+    "dataset": "t100_segment",
+    "year": 2026,
+    "downloaded_at": "2026-11-15T18:42:53",
+    "rows": 381593,
+    "file": "t100_seg/t100_seg_2026.parquet"
   }
 ]
